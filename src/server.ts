@@ -1,12 +1,14 @@
 import express, {Request, Response, NextFunction} from "express";
 import "reflect-metadata";
 import "express-async-errors";
+import cors from "cors"
 
 import { router } from "./routes";
 
 import "./database"
 
 const app = express();
+app.use(cors()) // outras fontes consegue acessar a aplicação
 
 app.use(express.json())
 
